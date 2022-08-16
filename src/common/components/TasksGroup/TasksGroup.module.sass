@@ -1,0 +1,38 @@
+.tasks_group
+    background: #282828
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05)
+    border-radius: 25px
+    transition: border-radius .3s
+
+.tasks_group__head
+    cursor: pointer
+    display: flex
+    align-items: center
+    font-size: 24px
+    line-height: 28px
+    font-weight: 600
+    height: 79px
+    padding-left: 15px
+    padding-right: 37px
+    &:before
+        content: ''
+        height: 40px
+        width: 5px
+        background: #A9A9A9
+        border-radius: 25px
+        margin-right: 13px
+
+.tasks_group__arrow
+    transition: transform .3s
+    margin-left: auto
+
+.tasks_group__main
+    padding: 0 37px 18px 15px
+
+.tasks_group--opened
+    border-radius: 40px
+    .tasks_group__arrow
+        transform: rotate(180deg)
+.tasks_group--no_head
+    .tasks_group__main
+        padding-top: 16px

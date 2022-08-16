@@ -1,0 +1,25 @@
+.switch
+    background: #366EFF
+    box-shadow: inset 0px 0px 10px 3px rgba(0, 0, 0, 0.25)
+    border-radius: 20px
+    position: relative
+    width: 50px
+    height: 29px
+    padding: 2px
+    cursor: pointer
+    transition: background .3s
+    display: inline-flex
+.switch__handler
+    width: 25px
+    height: 25px
+    background: #F4F4F4
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: transform .3s
+
+.switch--checked
+    background: #10C200
+    .switch__handler
+        transform: translate(20px, 0)

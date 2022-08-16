@@ -1,0 +1,32 @@
+.task
+    display: flex
+    align-items: center
+    font-weight: 600
+.task__line
+    content: ''
+    height: 40px
+    width: 5px
+    border-radius: 25px
+    margin-right: 13px
+    flex-shrink: 0
+.task__main
+    padding-right: 15px
+    min-width: 0
+.task__title
+    font-size: 24px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+.task__text
+    font-size: 14px
+    color: rgba(255, 255, 255, 0.6)
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+.task__switch
+    flex-shrink: 0
+    margin-left: auto
+
+.task--completed
+    .task__title
+        text-decoration: line-through
