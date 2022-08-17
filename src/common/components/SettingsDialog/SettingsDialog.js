@@ -5,7 +5,6 @@ import {
   DialogContent,
   DialogActions,
   Button,
-  FormControl,
   Grid,
   Typography,
 } from '@mui/material';
@@ -20,21 +19,29 @@ const SettingsDialog = ({
 }) => {
   const formik = useFormik({
     initialValues: initialValues || {
-      isRunningLineActive: true,
+      showNewsTicker: true,
     },
     onSubmit: (values) => {
       onSubmit(values);
       onClose();
       formik.resetForm();
     },
+    enableReinitialize: true,
   });
+
+  const handleClose = () => {
+    formik.resetForm();
+    onClose();
+  }
 
   return (
     <Dialog
       open={isActive}
-      onClose={onClose}
+      onClose={handleClose}
       fullWidth
-      PaperProps={{ sx: { background: '#282828', color: '#F4F4F4', maxWidth: '400px' } }}
+      PaperProps={{
+        sx: { background: '#282828', color: '#F4F4F4', maxWidth: '400px' },
+      }}
     >
       <form onSubmit={formik.handleSubmit}>
         <DialogTitle>Settings</DialogTitle>
@@ -45,16 +52,16 @@ const SettingsDialog = ({
             </Grid>
             <Grid item>
               <Switch
-                isChecked={formik.values.isRunningLineActive}
+                isChecked={formik.values.showNewsTicker}
                 onChange={(value) =>
-                  formik.setFieldValue('isRunningLineActive', value)
+                  formik.setFieldValue('showNewsTicker', value)
                 }
               />
             </Grid>
           </Grid>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose}>Cancel</Button>
+          <Button onClick={handleClose}>Cancel</Button>
           <Button type='submit'>Save</Button>
         </DialogActions>
       </form>

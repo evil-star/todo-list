@@ -6,7 +6,7 @@ import PlusImg from '../../../assets/images/icons/plus.svg';
 
 const TodosHeader = ({ onAddClick = () => {}, onSettingsClick = () => {} }) => {
   return (
-    <Grid container sx={{ pt: '13px', pb: '13px' }}>
+    <Grid container sx={{ pb: '13px' }}>
       <Grid item>
         <Box component='img' src={LogoImg} alt='to do' display='block' />
       </Grid>

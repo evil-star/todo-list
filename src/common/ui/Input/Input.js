@@ -15,6 +15,9 @@ const Input = styled(TextField)({
   '& .MuiInputBase-root:hover:not(.Mui-disabled):before': {
     borderColor: '#F4F4F4',
   },
+  '& .MuiSvgIcon-root': {
+    fill: '#fff',
+  },
 });
 
 export default Input;

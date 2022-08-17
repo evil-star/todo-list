@@ -14,7 +14,7 @@ const TasksGroup = ({ title, children }) => {
         [styles['tasks_group--no_head']]: !title,
       })}
     >
-      {title && (
+      <AnimateHeight height={title ? 'auto' : 0}>
         <div
           className={styles.tasks_group__head}
           onClick={() => setIsOpened(!isOpened)}
@@ -22,7 +22,8 @@ const TasksGroup = ({ title, children }) => {
           <span>{title}</span>{' '}
           <ArrowSvg className={styles.tasks_group__arrow} />
         </div>
-      )}
+      </AnimateHeight>
+
       <AnimateHeight height={isOpened || !title ? 'auto' : 0}>
         <div className={styles.tasks_group__main}>{children}</div>
       </AnimateHeight>
