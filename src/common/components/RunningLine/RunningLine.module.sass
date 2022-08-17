@@ -1,4 +1,4 @@
-$duration: 30s
+$duration: 20s
 
 .line
     position: fixed
@@ -20,7 +20,7 @@ $duration: 30s
     &:nth-child(1)
         animation: ticker $duration infinite linear forwards
     &:nth-child(2)
-        animation: $duration ticker $duration/2 infinite linear forwards
+        animation: $duration ticker calc($duration/2) infinite linear forwards
 
 @keyframes ticker
     0%
