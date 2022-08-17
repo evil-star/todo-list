@@ -121,8 +121,8 @@ const Todos = () => {
         initialValues={settings}
       />
       {/* Running line */}
-      {settings.showNewsTicker && !!fetchedNews?.articles.length && (
-        <RunningLine>{fetchedNews.articles[0].description}</RunningLine>
+      {settings.showNewsTicker && !!fetchedNews?.data?.length && (
+        <RunningLine>{fetchedNews.data[0].description}</RunningLine>
       )}
     </>
   );
