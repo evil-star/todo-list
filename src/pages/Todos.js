@@ -18,12 +18,11 @@ import SettingsDialog from '../common/components/SettingsDialog/SettingsDialog';
 import RunningLine from '../common/components/RunningLine/RunningLine';
 import { formatGroupedTodosDates, groupTodosByDate } from '../utils/todos';
 import { taskColors } from '../constants/tasks';
-import { useQuery } from 'react-query';
-import { getNews } from '../services/newsApi';
+import { useGetNews } from '../hooks/news.hooks';
 
 const Todos = () => {
   // Fetch news
-  const { data: fetchedNews } = useQuery('news', getNews);
+  const { data: fetchedNews } = useGetNews();
 
   // Todos
   const [{ list, settings }, dispatch] = useTodos();
