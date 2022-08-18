@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/todo-list/static/css/main.20af8bdf.css",
-    "main.js": "/todo-list/static/js/main.5496bdc8.js",
+    "main.css": "/todo-list/static/css/main.73dae8c0.css",
+    "main.js": "/todo-list/static/js/main.f6b1ca48.js",
     "static/media/AcuminPro-Bold.svg": "/todo-list/static/media/AcuminPro-Bold.499fe5716820bb73e208.svg",
     "static/media/AcuminPro-Bold.eot": "/todo-list/static/media/AcuminPro-Bold.78f4f80246cbc8aedf2a.eot",
     "static/media/AcuminPro-Bold.ttf": "/todo-list/static/media/AcuminPro-Bold.3f33604cdc05a5eae8cb.ttf",
@@ -14,11 +14,11 @@
     "static/media/arrow-down-circle.svg": "/todo-list/static/media/arrow-down-circle.62a2bdbd33050e9d458e02801ee66428.svg",
     "static/media/cross.svg": "/todo-list/static/media/cross.cb1cd22808c4ed93d9c56c0e6a0325f8.svg",
     "static/media/tick.svg": "/todo-list/static/media/tick.e3c6639b75663eda952ad0a63f24cb4a.svg",
-    "main.20af8bdf.css.map": "/todo-list/static/css/main.20af8bdf.css.map",
-    "main.5496bdc8.js.map": "/todo-list/static/js/main.5496bdc8.js.map"
+    "main.73dae8c0.css.map": "/todo-list/static/css/main.73dae8c0.css.map",
+    "main.f6b1ca48.js.map": "/todo-list/static/js/main.f6b1ca48.js.map"
   },
   "entrypoints": [
-    "static/css/main.20af8bdf.css",
-    "static/js/main.5496bdc8.js"
+    "static/css/main.73dae8c0.css",
+    "static/js/main.f6b1ca48.js"
   ]
 }
