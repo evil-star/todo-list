@@ -4,6 +4,7 @@ import {
   FormControlLabel,
   Typography,
   Stack,
+  Box,
 } from '@mui/material';
 import React, { useState } from 'react';
 
@@ -61,7 +62,9 @@ const Todos = () => {
           <Grid item xs={12} sx={{ mb: '15px' }}>
             <FormControlLabel
               label={
-                <Typography sx={{ fontWeight: '600' }}>Today Tasks:</Typography>
+                <Typography sx={{ fontWeight: '600', fontSize: '24px' }}>
+                  Today Tasks:
+                </Typography>
               }
               control={
                 <Checkbox
@@ -87,16 +90,18 @@ const Todos = () => {
                 key={group.date}
               >
                 {group.todos.map((todo, index) => (
-                  <Task
-                    title={todo.title}
-                    text={todo.text}
-                    isCompleted={todo.isCompleted}
-                    key={todo.id}
-                    onCompleteChange={(isCompleted) =>
-                      handleChangeTodo({ ...todo, isCompleted })
-                    }
-                    lineColor={taskColors[index % taskColors.length]}
-                  />
+                  <Box sx={{ mb: '16px', '&:last-child': { mb: 0 } }}>
+                    <Task
+                      title={todo.title}
+                      text={todo.text}
+                      isCompleted={todo.isCompleted}
+                      key={todo.id}
+                      onCompleteChange={(isCompleted) =>
+                        handleChangeTodo({ ...todo, isCompleted })
+                      }
+                      lineColor={taskColors[index % taskColors.length]}
+                    />
+                  </Box>
                 ))}
               </TasksGroup>
             ))
