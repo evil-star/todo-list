@@ -35,19 +35,35 @@ const Todos = () => {
   // States
   const [isSettingsActive, setIsSettingsActive] = useState(false);
   const [isAddTodoActive, setIsAddTodoActive] = useState(false);
+  const [todoToEdit, setTodoToEdit] = useState(null);
 
   // Add task
   const handleAddTask = (values) =>
     dispatch({ type: 'ADD_TODO', payload: values });
 
   // Change todo
-  const handleChangeTodo = (updatedTodo) => {
+  const handleChangeTodo = (updatedTodo) =>
     dispatch({ type: 'UPDATE_TODO', payload: updatedTodo });
-  };
+
+  // Remove todo
+  const handleRemoveTodo = (todo) =>
+    dispatch({ type: 'REMOVE_TODO', payload: todo });
 
   // Settings change
   const handleSettingsChange = (settings) =>
     dispatch({ type: 'UPDATE_SETTINGS', payload: settings });
+
+  // Add todo close
+  const handleAddTodoClose = () => {
+    setIsAddTodoActive(false);
+    setTodoToEdit(null);
+  };
+
+  // Todo click
+  const handleTodoClick = (todo) => {
+    setIsAddTodoActive(true);
+    setTodoToEdit(todo);
+  };
 
   return (
     <>
@@ -89,7 +105,10 @@ const Todos = () => {
                 key={group.date}
               >
                 {group.todos.map((todo, index) => (
-                  <Box sx={{ mb: '16px', '&:last-child': { mb: 0 } }}>
+                  <Box
+                    sx={{ mb: '16px', '&:last-child': { mb: 0 } }}
+                    key={index}
+                  >
                     <Task
                       title={todo.title}
                       text={todo.text}
@@ -98,6 +117,7 @@ const Todos = () => {
                       onCompleteChange={(isCompleted) =>
                         handleChangeTodo({ ...todo, isCompleted })
                       }
+                      onEdit={() => handleTodoClick(todo)}
                       lineColor={taskColors[index % taskColors.length]}
                     />
                   </Box>
@@ -114,8 +134,11 @@ const Todos = () => {
       {/* Adding todo */}
       <AddTaskDialog
         onSubmit={handleAddTask}
-        onClose={() => setIsAddTodoActive(false)}
+        onEdit={handleChangeTodo}
+        onRemove={handleRemoveTodo}
+        onClose={handleAddTodoClose}
         isActive={isAddTodoActive}
+        initialValues={todoToEdit}
       />
       {/* Settings */}
       <SettingsDialog

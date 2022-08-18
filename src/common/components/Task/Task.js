@@ -5,6 +5,7 @@ import Switch from '../../ui/Switch/Switch';
 
 const Task = ({
   onCompleteChange = () => {},
+  onEdit = () => {},
   isCompleted = false,
   title,
   text,
@@ -20,7 +21,7 @@ const Task = ({
         className={styles.task__line}
         style={{ background: lineColor }}
       ></div>
-      <div className={styles.task__main}>
+      <div className={styles.task__main} onClick={onEdit}>
         {title && <div className={styles.task__title}>{title}</div>}
         {text && <div className={styles.task__text}>{text}</div>}
       </div>

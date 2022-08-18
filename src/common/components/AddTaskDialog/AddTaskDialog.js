@@ -16,16 +16,22 @@ import { sub } from 'date-fns';
 
 const AddTaskDialog = ({
   onSubmit = () => {},
+  onEdit = () => {},
+  onRemove = () => {},
   onClose = () => {},
   initialValues,
   isActive,
 }) => {
+  const initialDate = initialValues?.date ? new Date() : null;
+  if (initialDate) initialDate.setTime(initialValues.date);
+
   const formik = useFormik({
-    initialValues: initialValues || {
-      title: '',
-      text: '',
-      date: null,
-      isCompleted: false,
+    initialValues: {
+      id: initialValues?.id || '',
+      title: initialValues?.title || '',
+      text: initialValues?.text || '',
+      date: initialDate || null,
+      isCompleted: initialValues?.isCompleted || false,
     },
     validationSchema: Yup.object().shape({
       title: Yup.string().required('Required'),
@@ -36,13 +42,27 @@ const AddTaskDialog = ({
         .typeError('Invalid date'),
     }),
     onSubmit: (values) => {
-      values.date = values.date.getTime();
-      values.id = uuidv4();
-      onSubmit(values);
+      const formtattedValue = {
+        ...values,
+        date: values.date.getTime(),
+        id: values.id || uuidv4(),
+      };
+      if (!initialValues) {
+        onSubmit(formtattedValue);
+      } else {
+        onEdit(formtattedValue);
+      }
       onClose();
       formik.resetForm();
     },
+    enableReinitialize: true,
   });
+
+  const handleRemove = () => {
+    if (!initialValues) return;
+    onClose();
+    onRemove(initialValues);
+  };
 
   return (
     <Dialog
@@ -52,7 +72,7 @@ const AddTaskDialog = ({
       PaperProps={{ sx: { background: '#282828', color: '#F4F4F4' } }}
     >
       <form onSubmit={formik.handleSubmit}>
-        <DialogTitle>Add to do</DialogTitle>
+        <DialogTitle>{initialValues ? 'Edit to do' : 'Add to do'}</DialogTitle>
         <DialogContent>
           <FormControl fullWidth>
             <Input
@@ -103,7 +123,14 @@ const AddTaskDialog = ({
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose}>Cancel</Button>
-          <Button type='submit'>Add</Button>
+          {initialValues && (
+            <Button color='error' onClick={handleRemove}>
+              Remove
+            </Button>
+          )}
+          <Button type='submit' color='success'>
+            {initialValues ? 'Edit' : 'Add'}
+          </Button>
         </DialogActions>
       </form>
     </Dialog>
