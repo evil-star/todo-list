@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.css": "/todo-list/static/css/main.2cc7e40f.css",
-    "main.js": "/todo-list/static/js/main.677d841a.js",
-    "static/media/logo.svg": "/todo-list/static/media/logo.8435f2e695344db210655fbb2daa6d12.svg",
-    "static/media/gear.svg": "/todo-list/static/media/gear.0d4a92e75a089eb95b6aa86e2744d329.svg",
+    "main.css": "/todo-list/static/css/main.8ae61893.css",
+    "main.js": "/todo-list/static/js/main.29d9cfe0.js",
+    "static/media/AcuminPro-Bold.svg": "/todo-list/static/media/AcuminPro-Bold.f810feb2056ca2dccf77.svg",
+    "static/media/AcuminPro-Bold.eot": "/todo-list/static/media/AcuminPro-Bold.78f4f80246cbc8aedf2a.eot",
+    "static/media/AcuminPro-Bold.ttf": "/todo-list/static/media/AcuminPro-Bold.3f33604cdc05a5eae8cb.ttf",
+    "static/media/AcuminPro-Bold.woff": "/todo-list/static/media/AcuminPro-Bold.71047edd6aa3eee1f225.woff",
+    "static/media/AcuminPro-Bold.woff2": "/todo-list/static/media/AcuminPro-Bold.b80c14ec535a7b31796f.woff2",
+    "static/media/logo.svg": "/todo-list/static/media/logo.dc04021978b5f7246c13bf9e4205ed65.svg",
+    "static/media/gear.svg": "/todo-list/static/media/gear.f258cd1ccd66ac61569de80874b6bb2d.svg",
     "static/media/plus.svg": "/todo-list/static/media/plus.64469d42317ca01843c64282642b086f.svg",
     "index.html": "/todo-list/index.html",
-    "static/media/arrow-down-circle.svg": "/todo-list/static/media/arrow-down-circle.62a2bdbd33050e9d458e02801ee66428.svg",
-    "static/media/cross.svg": "/todo-list/static/media/cross.cb1cd22808c4ed93d9c56c0e6a0325f8.svg",
-    "static/media/tick.svg": "/todo-list/static/media/tick.e3c6639b75663eda952ad0a63f24cb4a.svg",
-    "main.2cc7e40f.css.map": "/todo-list/static/css/main.2cc7e40f.css.map",
-    "main.677d841a.js.map": "/todo-list/static/js/main.677d841a.js.map"
+    "static/media/arrow-down-circle.svg": "/todo-list/static/media/arrow-down-circle.c4ce12172460e8a0bb62e4b2d1db5d42.svg",
+    "static/media/cross.svg": "/todo-list/static/media/cross.7ff1f6d0623e99d6cb3003a8e6131671.svg",
+    "static/media/tick.svg": "/todo-list/static/media/tick.fb4a82d2507ecaf034a0cccd05aad4dc.svg",
+    "main.8ae61893.css.map": "/todo-list/static/css/main.8ae61893.css.map",
+    "main.29d9cfe0.js.map": "/todo-list/static/js/main.29d9cfe0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2cc7e40f.css",
-    "static/js/main.677d841a.js"
+    "static/css/main.8ae61893.css",
+    "static/js/main.29d9cfe0.js"
   ]
 }
