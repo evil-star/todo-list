@@ -2,6 +2,6 @@ import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
   typography: {
-    fontFamily: ['Abhaya Libre', 'Arial'].join(','),
+    fontFamily: ['Acumin Pro', 'Arial'].join(','),
   },
 });
